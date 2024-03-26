@@ -18,3 +18,6 @@ jobs:
         uses: 3ru/gpt-translate@master
         with:
           apikey: ${{ secrets.OPENAI_API_KEY }}
+      - name: Install and Build
+        run: |
+          echo "files=$(git diff --name-only HEAD^ HEAD | grep '^EN/.*\.md$' | tr '\n' ' ')" >> $GITHUB_OUTPUT
