@@ -20,4 +20,4 @@ jobs:
           apikey: ${{ secrets.OPENAI_API_KEY }}
       - name: Install and Build
         run: |
-          echo "files=$(git diff --name-only HEAD^ HEAD | grep '^vn/.*\.md$' | tr '\n' ' ')" >> $GITHUB_OUTPUT
+          /gpt-translate ./vn/README.md ./en/README.md EN
